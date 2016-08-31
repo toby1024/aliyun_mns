@@ -3,6 +3,7 @@ require 'active_support/core_ext'
 require 'rest-client'
 require 'nokogiri'
 require 'yaml'
+require 'openssl'
 require "aliyun_mns/version"
 class Hash
   def self.xml_array content, *path
