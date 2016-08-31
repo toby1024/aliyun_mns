@@ -10,9 +10,9 @@ Add this line to your application's Gemfile:
 gem 'ali_mns', :git => 'https://github.com/zhangbin/aliyun_mns.git'
 ```
 ## Rails configuration
-f you are going to use this gem in a rails environment. 
+if you are going to use this gem in a rails environment. 
 You need to create a configuration file at <RAILS_ROOT>/config/aliyun_mns.yml. 
-In this way, you can use different set of queues for your development or production environments.
+In this way, you can use different set of topics for your development or production environments.
 
     development:
        access_key_id:       'ccess_key_id'
@@ -35,12 +35,14 @@ At last you can also config the gem in place, by excute the following code befor
       config.endpoint = "$id.mns.cn-hangzhou.aliyuncs.com"
       
     end
+    
 And then execute:
 
-    $ bundle
+    $ bundle install
 
 
-## Usage
+# Usage
+## about topic
 
 create
 
@@ -80,7 +82,7 @@ get topic attributes
 
     
 subscribe
-
+    
     AliyunMns::Topic["atopic", "atopic-subscribe"].subscribe(
               {
                   :Endpoint => "http://Endpoint_url",
