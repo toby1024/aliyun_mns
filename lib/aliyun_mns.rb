@@ -22,9 +22,9 @@ module AliyunMns
     def configuration
       @configuration ||= begin
         if defined? Rails
-          config_file = Rails.root.join("config/aliyun-mqs.yml")
+          config_file = Rails.root.join("config/aliyun_mns.yml")
         else
-          config_file = File.expand_path("~/.aliyun-mqs.yml")
+          config_file = File.expand_path("~/.aliyun_mns.yml")
         end
 
         if (File.exist?(config_file))
