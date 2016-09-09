@@ -105,6 +105,23 @@ publish message
               }
           )
     
+## about queue
+
+create
+
+    AliyunMns::Queue["aqueue"].create
+    
+delete
+    
+     AliyunMns::Queue["aqueue"].delete
+     
+send message
+
+    AliyunMns::Queue["aqueue"].send_message("send_message")
+    
+receive message
+
+    message = AliyunMns::Queue["aqueue"].receive_message
 
 ## Development
 
