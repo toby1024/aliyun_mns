@@ -7,7 +7,7 @@ aliyun mns 通过http api操作topic
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'ali_mns', :git => 'https://github.com/zhangbin/aliyun_mns.git'
+gem 'aliyun_mns', :git => 'https://github.com/zhangbin/aliyun_mns.git'
 ```
 ## Rails configuration
 if you are going to use this gem in a rails environment. 
