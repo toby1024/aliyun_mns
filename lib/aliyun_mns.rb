@@ -25,7 +25,8 @@ module AliyunMns
         if defined? Rails
           config_file = Rails.root.join("config/aliyun_mns.yml")
         else
-          config_file = File.expand_path("~/.aliyun_mns.yml")
+          # config_file = File.expand_path("config/aliyun_mns.yml")
+          config_file = File.expand_path('../config/aliyun_mns.yml',  __FILE__)
         end
 
         if (File.exist?(config_file))
