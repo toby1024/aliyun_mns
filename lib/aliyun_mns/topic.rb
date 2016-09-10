@@ -72,7 +72,7 @@ module AliyunMns
       if opts[:MessageBody].nil? || opts[:MessageBody].blank?
         raise RequestException.new(Exception.new("publish message parameters invalid"))
       else
-        Request.put(message_path) do |request|
+        Request.post(message_path) do |request|
           request.content(:Message, opts)
         end
       end
