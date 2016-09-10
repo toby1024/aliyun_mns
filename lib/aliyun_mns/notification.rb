@@ -13,7 +13,7 @@ module AliyunMns
       @subscription_name = content_hash["SubscriptionName"]
       @topic_name = content_hash["TopicName"]
       @topic_owner = content_hash["TopicOwner"]
-      @message_format = content_hash["Format"]
+      @message_format = content_hash["format"]
       @message_controller = content_hash["Controller"]
       @action = content_hash["Action"]
       @send_record = content_hash["SendRecord"]
