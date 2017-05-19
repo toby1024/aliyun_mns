@@ -19,7 +19,7 @@ module AliyunMns
     class << self
       [:get, :delete, :put, :post].each do |m|
         define_method m do |*args, &block|
-          options = {method: m, path: args[0], mqs_headers: {}, params: {}}
+          options = {method: m, path: args[0], mqs_headers: {}, params: {read_timeout: 120, open_timeout: 240}}
           options.merge!(args[1]) if args[1].is_a?(Hash)
 
           request = AliyunMns::Request.new(options)
@@ -67,7 +67,10 @@ module AliyunMns
       begin
         RestClient.send *[method, uri.to_s, body, headers].compact
       rescue RestClient::Exception => ex
-        raise RequestException.new(ex)
+        logger = Logger.new(STDOUT)
+        logger.error ex.message
+        logger.error ex.backtrace.join("\n")
+        raise ex
       end
     end
 
