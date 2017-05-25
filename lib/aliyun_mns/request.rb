@@ -19,7 +19,7 @@ module AliyunMns
     class << self
       [:get, :delete, :put, :post].each do |m|
         define_method m do |*args, &block|
-          options = {method: m, path: args[0], mqs_headers: {}, params: {read_timeout: 120, open_timeout: 240}}
+          options = {method: m, path: args[0], mqs_headers: {}, params: {}}
           options.merge!(args[1]) if args[1].is_a?(Hash)
 
           request = AliyunMns::Request.new(options)
